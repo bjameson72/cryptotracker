@@ -1,0 +1,66 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+              <div class="card">
+                <div style="width: 100px; padding-left: 10px; padding-top: 10px;">
+                  <select class="form-control" [(ngModel)]="selectedCurrency">
+                    <option *ngFor="let c of currencies" [ngValue]="c"> {{c}} </option>
+                  </select>
+                </div>
+                <graph 
+                  [selectedCurrency]=selectedCurrency>
+                </graph>
+              </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'GDAX'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'Bitfinex'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'Binance'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'Bitstamp'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'Gemini'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+            <div class="col-md-4">
+              <ticker
+                  [exchange]="'Poloniex'"
+                  [currency]="selectedCurrency"
+                  [quotes]="quotes">
+                </ticker>
+            </div> 
+        </div>
+    </div>
+</div>

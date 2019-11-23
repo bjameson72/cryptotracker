@@ -1,0 +1,15 @@
+<div class="content">
+  <div class="ct-chart"></div>
+  <div class="footer">
+    <div class="legend">
+      <span *ngFor="let item of legendItems">
+        <a href="" onclick="return false;" (click)="hideItem(item)">
+          <i class="fa fa-circle {{ item }}"></i></a> {{ item }}
+      </span>
+    </div>
+    <hr>
+    <div class="stats">
+      <a href="" onclick="return false;"><i (click)="updateAllCryptos()" class="fa fa-history"></i></a> Last Updated: {{ lastUpdated }}
+    </div>
+  </div>
+</div>
